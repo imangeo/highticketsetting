@@ -30,20 +30,20 @@ export default function StrategyCall() {
     return () => clearTimeout(timer);
   }, []);
 
-  // 2. Ton NOUVEAU numéro WhatsApp exact : 00243827513601 -> 243827513601
+  // 2. Numéro WhatsApp exact (+243 827 513 601)
   const whatsappNumber = "243827513601";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=Setting`;
 
   return (
-    <main className="w-full min-h-[85vh] bg-transparent text-white px-4 py-16 relative">
+    <main className="w-full min-h-[85vh] bg-transparent text-white px-3 sm:px-4 py-10 sm:py-16 relative overflow-x-hidden">
       <div className="max-w-3xl mx-auto text-center relative z-10">
         {/* --- 1. TITRE DE CÉLÉBRATION --- */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight leading-tight mb-10 text-white drop-shadow-md">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight leading-tight mb-8 sm:mb-10 text-white drop-shadow-md">
           Bravo de passer <br className="hidden sm:block" /> à l'action !
         </h1>
 
         {/* --- 2. VIDÉO EXPLICATIVE --- */}
-        <div className="card-dark overflow-hidden border border-white/20 shadow-2xl mx-auto mb-16 bg-black/50 p-1 sm:p-3">
+        <div className="card-dark overflow-hidden border border-white/20 shadow-2xl mx-auto mb-10 sm:mb-16 bg-black/50 p-1 sm:p-3 max-w-2xl">
           <div className="rounded-xl overflow-hidden">
             <SmartVideoPlayer
               src={CONTENT.videos.strategy?.src || ""}
@@ -55,54 +55,66 @@ export default function StrategyCall() {
         </div>
 
         {/* --- 3. TITRE TRANSITION --- */}
-        <h2 className="text-2xl sm:text-4xl font-bold uppercase tracking-tight leading-tight mb-8 text-white/90">
+        <h2 className="text-xl sm:text-3xl md:text-4xl font-bold uppercase tracking-tight leading-tight mb-6 sm:mb-8 text-white/90">
           Pour réserver ton <br className="sm:hidden" /> appel stratégique
         </h2>
 
         {/* --- 4. CARTE PRINCIPALE : Instructions WhatsApp --- */}
-        <div className="card-dark p-8 sm:p-14 text-center mb-10 shadow-[0_0_40px_rgba(0,107,179,0.15)] bg-black/60 border-white/10">
+        <div className="card-dark p-5 sm:p-12 text-center mb-8 sm:mb-10 shadow-[0_0_40px_rgba(0,107,179,0.15)] bg-black/60 border-white/10 max-w-2xl mx-auto">
           {/* Illustration visuelle Message -> WhatsApp */}
-          <div className="flex items-center justify-center gap-4 mb-8 text-[#006bb3]">
-            <MessageSquare size={32} strokeWidth={2} className="opacity-90" />
-            <ArrowRight size={20} strokeWidth={2} className="opacity-60" />
-            <WhatsAppIcon size={32} className="opacity-90" />
+          <div className="flex items-center justify-center gap-3 sm:gap-4 mb-6 sm:mb-8 text-[#006bb3]">
+            <MessageSquare
+              size={26}
+              strokeWidth={2}
+              className="opacity-90 sm:w-8 sm:h-8"
+            />
+            <ArrowRight
+              size={18}
+              strokeWidth={2}
+              className="opacity-60 sm:w-5 sm:h-5"
+            />
+            <WhatsAppIcon size={26} className="opacity-90 sm:w-8 sm:h-8" />
           </div>
 
-          <p className="text-lg sm:text-xl font-bold text-white/90 leading-relaxed mb-8">
+          <p className="text-base sm:text-xl font-bold text-white/90 leading-relaxed mb-6 sm:mb-8">
             Envoie-moi le mot-clé sur WhatsApp :
           </p>
 
-          {/* Badge du Mot-Clé */}
-          <div className="inline-block bg-gradient-to-r from-[#004e8a] to-[#006bb3] text-white font-black text-3xl sm:text-4xl tracking-widest px-12 py-5 rounded-2xl shadow-lg border border-white/20 mb-8">
+          {/* Badge du Mot-Clé (Responsive) */}
+          <div className="inline-block bg-gradient-to-r from-[#004e8a] to-[#006bb3] text-white font-black text-2xl sm:text-4xl tracking-widest px-6 sm:px-12 py-3.5 sm:py-5 rounded-2xl shadow-lg border border-white/20 mb-6 sm:mb-8 max-w-full truncate">
             "SETTING"
           </div>
 
-          <p className="text-sm font-medium text-white/50">
+          <p className="text-xs sm:text-sm font-medium text-white/60 leading-normal">
             Clique sur le bouton ci-dessous, le message est déjà prêt à être
             envoyé.
           </p>
         </div>
 
         {/* --- 5. FLÈCHES D'ANIMATION DESCENDANTES --- */}
-        <div className="flex flex-col items-center justify-center mb-8 text-[#006bb3] animate-bounce">
-          <ChevronsDown size={36} strokeWidth={2.5} />
+        <div className="flex flex-col items-center justify-center mb-6 sm:mb-8 text-[#006bb3] animate-bounce">
+          <ChevronsDown size={30} strokeWidth={2.5} className="sm:w-9 sm:h-9" />
         </div>
 
-        {/* --- 6. BOUTON D'ACTION DIRECT --- */}
-        <div className="flex flex-col items-center justify-center pb-12">
+        {/* --- 6. BOUTON D'ACTION DIRECT (100% RESPONSIVE) --- */}
+        <div className="flex flex-col items-center justify-center pb-8 sm:pb-12 w-full max-w-md mx-auto">
           <a
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-shine w-full sm:w-auto !px-12 !py-4 shadow-[0_10px_30px_rgba(0,107,179,0.3)]"
+            className="btn-shine w-full sm:w-auto px-5 sm:px-10 py-3.5 sm:py-4 shadow-[0_10px_30px_rgba(0,107,179,0.3)] max-w-full"
           >
-            <span className="flex items-center gap-3">
-              <Send size={20} strokeWidth={2.5} />
-              <span className="text-lg">Envoyer mon mot-clé</span>
+            <span className="flex items-center justify-center gap-2 sm:gap-3 text-base sm:text-lg shrink-0">
+              <Send
+                size={18}
+                strokeWidth={2.5}
+                className="shrink-0 sm:w-5 sm:h-5"
+              />
+              <span className="truncate">Envoyer mon mot-clé</span>
             </span>
 
             <svg
-              className="btn-shine-icon ml-2"
+              className="btn-shine-icon ml-1 shrink-0"
               viewBox="0 0 24 24"
               fill="currentColor"
               aria-hidden="true"
@@ -115,8 +127,8 @@ export default function StrategyCall() {
             </svg>
           </a>
 
-          {/* Affichage du numéro formaté : +243 827 513 601 */}
-          <p className="mt-8 text-xs font-medium tracking-widest text-white/40 font-mono">
+          {/* Affichage du numéro formaté */}
+          <p className="mt-6 sm:mt-8 text-xs font-medium tracking-widest text-white/40 font-mono">
             +{whatsappNumber.slice(0, 3)} {whatsappNumber.slice(3, 6)}{" "}
             {whatsappNumber.slice(6, 9)} {whatsappNumber.slice(9, 12)}
           </p>
