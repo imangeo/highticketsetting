@@ -31,7 +31,7 @@ export default function StrategyCall() {
   }, []);
 
   // 2. Ton numéro WhatsApp exact (+243 827 513 60)
-  const whatsappNumber = "24382751360";
+  const whatsappNumber = "+243 827 513 601";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=Setting`;
 
   return (
