@@ -1,6 +1,6 @@
 export const SITE_CONFIG = {
-  schoolName: "High-Ticket Setting School",
-  whatsappNumber: "2290191443640",
+  schoolName: "H-T SETTING SCHOOL",
+  whatsappNumber: "243827513601",
   googleScriptUrl: "https://script.google.com/macros/s/AKfycbwRIsmeRamJVDLlBhPeFg0aoMbJtGCiFzrRbFDI0v1gcIuCmulyl6tupNI8t9zPnOR2yw/exec",
 
   faq: [

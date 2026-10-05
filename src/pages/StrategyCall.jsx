@@ -4,7 +4,7 @@ import SmartVideoPlayer from "../components/ui/SmartVideoPlayer";
 import { Send, MessageSquare, ArrowRight, ChevronsDown } from "lucide-react";
 import { fireConfetti } from "../utils/confetti";
 
-// Icône WhatsApp personnalisée (SVG natif) pour le visuel
+// Icône WhatsApp personnalisée (SVG natif)
 const WhatsAppIcon = ({ size = 24, className = "" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -30,8 +30,8 @@ export default function StrategyCall() {
     return () => clearTimeout(timer);
   }, []);
 
-  // 2. Ton numéro WhatsApp exact (+243 827 513 60)
-  const whatsappNumber = "+243 827 513 601";
+  // 2. Ton NOUVEAU numéro WhatsApp exact : 00243827513601 -> 243827513601
+  const whatsappNumber = "243827513601";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=Setting`;
 
   return (
@@ -42,14 +42,14 @@ export default function StrategyCall() {
           Bravo de passer <br className="hidden sm:block" /> à l'action !
         </h1>
 
-        {/* --- 2. VIDÉO EXPLICATIVE (EN HAUT) --- */}
+        {/* --- 2. VIDÉO EXPLICATIVE --- */}
         <div className="card-dark overflow-hidden border border-white/20 shadow-2xl mx-auto mb-16 bg-black/50 p-1 sm:p-3">
           <div className="rounded-xl overflow-hidden">
             <SmartVideoPlayer
               src={CONTENT.videos.strategy?.src || ""}
               type={CONTENT.videos.strategy?.type || "file"}
               title={CONTENT.videos.strategy?.title || "Vidéo explicative"}
-              priority={true} // Se charge en priorité
+              priority={true}
             />
           </div>
         </div>
@@ -72,7 +72,7 @@ export default function StrategyCall() {
             Envoie-moi le mot-clé sur WhatsApp :
           </p>
 
-          {/* Badge du Mot-Clé (Fond dégradé Premium) */}
+          {/* Badge du Mot-Clé */}
           <div className="inline-block bg-gradient-to-r from-[#004e8a] to-[#006bb3] text-white font-black text-3xl sm:text-4xl tracking-widest px-12 py-5 rounded-2xl shadow-lg border border-white/20 mb-8">
             "SETTING"
           </div>
@@ -90,7 +90,6 @@ export default function StrategyCall() {
 
         {/* --- 6. BOUTON D'ACTION DIRECT --- */}
         <div className="flex flex-col items-center justify-center pb-12">
-          {/* Utilisation de la balise <a> avec ton style btn-shine */}
           <a
             href={whatsappUrl}
             target="_blank"
@@ -102,7 +101,6 @@ export default function StrategyCall() {
               <span className="text-lg">Envoyer mon mot-clé</span>
             </span>
 
-            {/* L'icône de balayage lumineuse de btn-shine */}
             <svg
               className="btn-shine-icon ml-2"
               viewBox="0 0 24 24"
@@ -117,10 +115,10 @@ export default function StrategyCall() {
             </svg>
           </a>
 
-          {/* Affichage du numéro */}
+          {/* Affichage du numéro formaté : +243 827 513 601 */}
           <p className="mt-8 text-xs font-medium tracking-widest text-white/40 font-mono">
             +{whatsappNumber.slice(0, 3)} {whatsappNumber.slice(3, 6)}{" "}
-            {whatsappNumber.slice(6, 8)} {whatsappNumber.slice(8, 11)}
+            {whatsappNumber.slice(6, 9)} {whatsappNumber.slice(9, 12)}
           </p>
         </div>
       </div>
