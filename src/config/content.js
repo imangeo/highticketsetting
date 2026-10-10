@@ -62,17 +62,18 @@ export const CONTENT = {
     },
 
     // --- LES IMAGES PRIORITAIRES ---
+    { id: "r0", type: "image", src: "/r0.jpeg" },
     { id: "r22", type: "image", src: "/r22.png" },
     { id: "r20", type: "image", src: "/r20.png" },
 
     // --- LE RESTE DES IMAGES (Captures d'écran) ---
+    
     { id: "r1", type: "image", src: "/r1.jpg" },
     { id: "r2", type: "image", src: "/r2.jpg" },
-    { id: "r3", type: "image", src: "/r3.PNG" }, // Attention à l'extension en majuscule !
+    { id: "r3", type: "image", src: "/r3.PNG" }, 
     { id: "r4", type: "image", src: "/r4.jpg" },
     { id: "r5", type: "image", src: "/r5.jpg" },
-    { id: "r6", type: "image", src: "/r6.PNG" }, // Attention à l'extension en majuscule !
-    { id: "r7", type: "image", src: "/r7.jpg" },
+    { id: "r6", type: "image", src: "/r6.PNG" }, 
     { id: "r8", type: "image", src: "/r8.png" },
     { id: "r9", type: "image", src: "/r9.png" },
     { id: "r10", type: "image", src: "/r10.jpg" },
